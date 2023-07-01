@@ -4,20 +4,17 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import net.objecthunter.exp4j.Expression;
-import net.objecthunter.exp4j.ExpressionBuilder;
 
 import java.net.URL;
 import java.text.DecimalFormat;
-import java.util.HashMap;
 import java.util.ResourceBundle;
 
 public class MainController implements Initializable {
 
-    private String ANSWER, EXPRESSION;
+    private String ANSWER;
     private String ANG_UNIT = "RAD";
-    private int DEC_PRECISION = 8;
-    private HashMap<String, String> VARIABLES = new HashMap<>();
+    private int DEC_PRECISION = 5;
+    private Evaluator evaluator = new Evaluator();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -28,27 +25,19 @@ public class MainController implements Initializable {
         expressionTF.insertText(expressionTF.getCaretPosition(), txt);
     }
 
-    private void replace() {
-        EXPRESSION = expressionTF.getText();
-
-        VARIABLES.forEach((exp, val) -> {
-            EXPRESSION = EXPRESSION.replaceAll(exp, val);
-        });
+    private String calculate() {
+        String exp = delSpaces(expressionTF.getText());
+        visorL.setText(exp);
+        DecimalFormat df = new DecimalFormat("#"+"#".repeat(DEC_PRECISION));
+        return evaluator.eval(exp)+"";
     }
 
-    private String calculate() {
-        try {
-            VARIABLES.put("ANS", ANSWER);
-
-            replace();
-            visorL.setText(EXPRESSION);
-
-            Expression exp = new ExpressionBuilder(EXPRESSION).build();
-            DecimalFormat df = new DecimalFormat("#." + "#".repeat(DEC_PRECISION));
-            return df.format(exp.evaluate());
-        } catch (Exception e) {
-            return "ERR";
+    private String delSpaces(String exp) {
+        String rtn = "";
+        for(char c : exp.toCharArray()) {
+            if(!(c == ' ')) rtn += c;
         }
+        return rtn;
     }
 
     @FXML

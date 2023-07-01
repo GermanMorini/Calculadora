@@ -39,7 +39,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label focusTraversable="false" layoutX="560.0" layoutY="125.0" prefHeight="20.0" prefWidth="65.0" text="SHIFT" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="125.0">
+      <Label focusTraversable="false" layoutX="560.0" layoutY="125.0" prefHeight="20.0" prefWidth="65.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="125.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font></Label>
@@ -50,10 +50,10 @@
       </TextField>
       <TextField fx:id="resultTF" alignment="CENTER_RIGHT" editable="false" focusTraversable="false" layoutX="12.0" layoutY="145.0" prefHeight="90.0" prefWidth="680.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="145.0">
          <font>
-            <Font size="35.0" />
+            <Font name="System Bold Italic" size="35.0" />
          </font>
          <cursor>
-            <Cursor fx:constant="DEFAULT" />
+            <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
       <Button fx:id="ansB" focusTraversable="false" layoutX="14.0" layoutY="250.0" mnemonicParsing="false" onAction="#ansBAP" prefHeight="60.0" prefWidth="60.0" text="ANS" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="250.0">
@@ -64,7 +64,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="visorL" focusTraversable="false" layoutX="8.0" layoutY="125.0" prefHeight="20.0" prefWidth="534.0" text="SHIFT" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="125.0">
+      <Label fx:id="visorL" focusTraversable="false" layoutX="8.0" layoutY="125.0" prefHeight="20.0" prefWidth="534.0" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="125.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
