@@ -9,6 +9,7 @@ cambios
 .idea/jarRepositories.xml
 .idea/compiler.xml
 .idea/libraries/
+.idea/codeStyles/
 *.iws
 *.iml
 *.ipr
